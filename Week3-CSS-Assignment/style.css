@@ -1,0 +1,387 @@
+
+/* ---------- Basic Styling ---------- */
+
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --main: #1f3a5f;
+    --accent: #e07a5f;
+    --light: #f4f6fa;
+    --border: #d9dee7;
+    --text: #344054;
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--text);
+    background: var(--light);
+}
+
+
+/* ---------- Main Layout ---------- */
+
+main, footer, .site-header {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 1.5rem;
+}
+
+h1, h2 {
+    color: var(--main);
+}
+
+h1 {
+    font-size: 32px;
+}
+
+h2 {
+    border-bottom: 2px solid var(--accent);
+    padding-bottom: 8px;
+    font-size: 24px;
+}
+
+
+/* ---------- Header and Navigation ---------- */
+
+.site-header {
+    background: white;
+    border-bottom: 1px solid var(--border);
+}
+
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.header-top h1 {
+    margin: 0;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+nav a {
+    color: var(--main);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 8px 12px;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+nav a:hover,
+nav a:focus {
+    background: var(--main);
+    color: white;
+}
+
+.intro {
+    font-size: 17px;
+    font-weight: 500;
+    margin-bottom: 0;
+    color: #475569;
+}
+
+
+/* ---------- Sections ---------- */
+
+section {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 22px;
+    margin-bottom: 25px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.04);
+}
+
+
+/* ---------- About Me Layout ---------- */
+
+.about-content {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+#about img {
+    width: 220px;
+    height: 230px;
+    object-fit: cover;
+    border-radius: 18px;
+    border: 3px solid var(--accent);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+    flex-shrink: 0;
+    display: block;
+}
+
+.about-text {
+    flex: 1;
+}
+
+.about-text p {
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 1.9;
+    letter-spacing: 0.3px;
+    color: #344054;
+    margin-bottom: 18px;
+}
+
+
+/* ---------- Goals Grid ---------- */
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+.card {
+    margin: 0;
+    padding: 18px;
+    background: var(--light);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--accent);
+    border-radius: 8px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 5px 12px rgba(0,0,0,0.08);
+}
+
+
+/* ---------- Interests ---------- */
+
+#interests ul {
+    padding-left: 25px;
+}
+
+#interests li {
+    padding: 7px;
+    font-weight: 500;
+    color: #344054;
+}
+
+#interests li::marker {
+    color: var(--accent);
+}
+
+
+/* ---------- Timetable ---------- */
+
+.table-wrap {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+th {
+    background: var(--main);
+    color: white;
+    padding: 14px;
+    text-align: left;
+}
+
+td {
+    padding: 12px;
+    border-bottom: 1px solid var(--border);
+}
+
+tbody tr:nth-child(even) {
+    background: #eef2f8;
+}
+
+tbody tr:hover {
+    background: #fce8e2;
+    transition: 0.3s;
+}
+
+
+/* ---------- Contact Form ---------- */
+
+form {
+    background: #f4f6fa;
+    padding: 22px;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+}
+
+form p {
+    margin-bottom: 18px;
+}
+
+label {
+    display: inline-block;
+    min-width: 90px;
+    font-weight: 600;
+    color: var(--main);
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="number"],
+form select,
+form textarea {
+    width: 100%;
+    max-width: 400px;
+    padding: 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font: inherit;
+    background: white;
+    transition: 0.3s;
+}
+
+form input:focus,
+form select:focus,
+form textarea:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 5px rgba(224,122,95,0.3);
+}
+
+form input[type="checkbox"] {
+    accent-color: var(--main);
+    cursor: pointer;
+}
+
+.checkbox-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.checkbox-row label {
+    min-width: auto;
+}
+
+form textarea {
+    resize: vertical;
+}
+
+
+/* ---------- Submit Button ---------- */
+
+form button {
+    background: var(--main);
+    color: white;
+    border: none;
+    padding: 11px 28px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+form button:hover {
+    background: var(--accent);
+}
+
+
+/* ---------- Footer ---------- */
+
+footer {
+    text-align: center;
+    color: #555;
+    font-size: 15px;
+    font-weight: 500;
+    border-top: 1px solid var(--border);
+}
+
+
+/* ---------- Tablet Responsive Design ---------- */
+
+@media (min-width: 768px) {
+
+    .grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    label {
+        min-width: 100px;
+    }
+}
+
+
+/* ---------- Mobile Responsive Design ---------- */
+
+@media (max-width: 600px) {
+
+    main, footer, .site-header {
+        padding: 1rem;
+    }
+
+    .header-top {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav {
+        gap: 6px;
+    }
+
+    nav a {
+        padding: 6px 8px;
+        font-size: 14px;
+    }
+
+    h1 {
+        font-size: 26px;
+    }
+
+    section {
+        padding: 15px;
+    }
+
+    .about-content {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    #about img {
+        width: 180px;
+        height: 200px;
+    }
+
+    .table-wrap {
+        overflow-x: auto;
+    }
+
+    table {
+        min-width: 450px;
+    }
+
+    form {
+        padding: 15px;
+    }
+
+    form input[type="text"],
+    form input[type="email"],
+    form input[type="number"],
+    form select,
+    form textarea {
+        max-width: 100%;
+    }
+
+}
